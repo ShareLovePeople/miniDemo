@@ -10,6 +10,6 @@ public class BrowserActivity extends BaseAcivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_browser);
+        setContentView(R.layout.app_activity_browser);
     }
 }

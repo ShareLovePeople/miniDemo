@@ -5,7 +5,7 @@
     android:layout_height="150dp">
 
     <ImageView
-        android:id="@+id/img_icon"
+        android:id="@+id/info_icon"
         android:layout_width="60dp"
         android:layout_height="100dp"
         android:contentDescription="@string/conD_item_icon"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/info_title"
         android:text="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

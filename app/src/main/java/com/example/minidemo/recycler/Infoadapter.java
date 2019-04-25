@@ -6,10 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.minidemo.R;
 import com.example.minidemo.model.Info;
-import com.example.minidemo.recycler.viewholder.InfoViewHolder;
+
 
 import java.util.List;
 
@@ -36,11 +38,25 @@ class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-
+        Info info  = datas.get(i);
+        if(viewHolder instanceof  InfoViewHolder){
+            InfoViewHolder infoViewHolder = (InfoViewHolder) viewHolder;
+            infoViewHolder.tvTitle.setText(info.getName());
+        }
     }
 
     @Override
     public int getItemCount() {
-        return datas.size();
+        return datas == null ? 0 : datas.size();
+    }
+
+    class InfoViewHolder extends RecyclerView.ViewHolder {
+        TextView tvTitle;
+        ImageView imgIcon;
+        InfoViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tvTitle = itemView.findViewById(R.id.info_title);
+            imgIcon = itemView.findViewById(R.id.info_icon);
+        }
     }
 }
