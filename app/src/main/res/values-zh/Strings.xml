@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">小演示</string>
+    <!--contentDescription xml内容说明-->
+    <string name="conD_item_icon">书籍封面</string>
+    <!--contentDescription xml-->
+</resources>
