@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 /**
  * @author Bob
  */
-public class MainActivity extends BaseAcivity {
+public class MainActivity extends BaseActivity {
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -27,7 +27,7 @@ public class MainActivity extends BaseAcivity {
 
     @BindView(R.id.recycler)
     RecyclerView recycler;
-    private List<BaseInfo> datas;
+    private List<BaseInfo> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class MainActivity extends BaseAcivity {
     private void initUi() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recycler.setLayoutManager(layoutManager);
-        Infoadapter infoadapter = new Infoadapter(this, datas);
+        Infoadapter infoadapter = new Infoadapter(this, data);
         recycler.setItemAnimator(new DefaultItemAnimator());
 //        recycler.addItemDecoration(new RecyclerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recycler.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
@@ -57,11 +57,11 @@ public class MainActivity extends BaseAcivity {
     }
 
     private void initData() {
-        datas = new ArrayList<>(16);
+        data = new ArrayList<>(16);
         for (int i = 0; i < 10; i++) {
             i++;
             BaseInfo baseInfo = new BaseInfo((long) i, "" + i);
-            datas.add(baseInfo);
+            data.add(baseInfo);
         }
     }
 

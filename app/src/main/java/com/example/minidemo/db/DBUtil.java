@@ -27,7 +27,7 @@ public class DBUtil {
     /**
      * 初始化GreenDao数据库
      *
-     * @param context
+     * @param context 上下文
      */
     private static void initGreenDB(Context context) {
         DaoMaster.DevOpenHelper openHelper = new DaoMaster.DevOpenHelper(context, DATA_NAME);

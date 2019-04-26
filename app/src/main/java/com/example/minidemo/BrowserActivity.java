@@ -5,7 +5,7 @@ import android.os.Bundle;
 /**
  * @author Bob
  */
-public class BrowserActivity extends BaseAcivity {
+public class BrowserActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

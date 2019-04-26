@@ -9,5 +9,5 @@ import android.app.Activity;
  * Description
  */
 @SuppressLint("Registered")
-public class BaseAcivity extends Activity {
+public class BaseActivity extends Activity {
 }

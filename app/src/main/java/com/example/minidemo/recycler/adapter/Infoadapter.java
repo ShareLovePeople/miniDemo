@@ -20,12 +20,12 @@ import java.util.List;
  * Description
  */
 public class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<BaseInfo> datas;
+    private List<BaseInfo> data;
     private Context ctx;
 
-    public Infoadapter(Context context, List<BaseInfo> datas) {
+    public Infoadapter(Context context, List<BaseInfo> data) {
         this.ctx = context;
-        this.datas = datas;
+        this.data = data;
     }
 
     @NonNull
@@ -37,7 +37,7 @@ public class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        BaseInfo baseInfo = datas.get(i);
+        BaseInfo baseInfo = data.get(i);
         if (viewHolder instanceof InfoViewHolder) {
             InfoViewHolder infoViewHolder = (InfoViewHolder) viewHolder;
             infoViewHolder.tvTitle.setText(baseInfo.getName());
@@ -46,7 +46,7 @@ public class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return datas == null ? 0 : datas.size();
+        return data == null ? 0 : data.size();
     }
 
     class InfoViewHolder extends RecyclerView.ViewHolder {
