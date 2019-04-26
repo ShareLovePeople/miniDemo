@@ -42,6 +42,10 @@ public class MainActivity extends BaseAcivity {
         tv.setText(stringFromJNI());*/
     }
 
+    /**
+     * recyclerView 这篇讲的不错
+     * https://blog.csdn.net/tuike/article/details/79064750
+     */
     private void initUi() {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recycler.setLayoutManager(layoutManager);
