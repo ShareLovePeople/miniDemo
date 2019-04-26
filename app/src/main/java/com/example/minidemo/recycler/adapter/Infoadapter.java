@@ -1,4 +1,4 @@
-package com.example.minidemo.recycler;
+package com.example.minidemo.recycler.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.minidemo.R;
 import com.example.minidemo.model.Info;
 
-
 import java.util.List;
 
 /**
@@ -20,7 +19,7 @@ import java.util.List;
  * Date     19-4-25
  * Description
  */
-class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Info> datas;
     private Context ctx;
 
@@ -38,8 +37,8 @@ class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        Info info  = datas.get(i);
-        if(viewHolder instanceof  InfoViewHolder){
+        Info info = datas.get(i);
+        if (viewHolder instanceof InfoViewHolder) {
             InfoViewHolder infoViewHolder = (InfoViewHolder) viewHolder;
             infoViewHolder.tvTitle.setText(info.getName());
         }
@@ -53,6 +52,7 @@ class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     class InfoViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitle;
         ImageView imgIcon;
+
         InfoViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.info_title);

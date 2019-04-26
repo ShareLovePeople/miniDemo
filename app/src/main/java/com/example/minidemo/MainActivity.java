@@ -1,10 +1,13 @@
 package com.example.minidemo;
 
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 
 import com.example.minidemo.model.Info;
+import com.example.minidemo.recycler.adapter.Infoadapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +27,8 @@ public class MainActivity extends BaseAcivity {
 
     @BindView(R.id.recycler)
     RecyclerView recycler;
-
     private List<Info> datas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +43,20 @@ public class MainActivity extends BaseAcivity {
     }
 
     private void initUi() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recycler.setLayoutManager(layoutManager);
+        Infoadapter infoadapter = new Infoadapter(this, datas);
+        recycler.setItemAnimator(new DefaultItemAnimator());
+//        recycler.addItemDecoration(new RecyclerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recycler.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recycler.setAdapter(infoadapter);
     }
 
     private void initData() {
         datas = new ArrayList<>(16);
-        for (int i = 0;i<10;i++ ) {
+        for (int i = 0; i < 10; i++) {
             i++;
-            Info info =new Info(""+i,""+i);
+            Info info = new Info("" + i, "" + i);
             datas.add(info);
         }
     }
