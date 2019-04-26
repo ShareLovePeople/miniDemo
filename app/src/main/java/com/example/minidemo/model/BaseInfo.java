@@ -1,26 +1,44 @@
 package com.example.minidemo.model;
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
+
 /**
  * @author bob
  * Date     19-4-25
- * Description
+ * Description 基础信息类
  */
-public class Info {
-    private String id;
+@Entity
+public class BaseInfo {
+    @Id
+    private Long id;
     private String name;
     private String type;
     private String author;
 
-    public Info(String id, String name) {
+    public BaseInfo(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() {
+    @Generated(hash = 626858930)
+    public BaseInfo(Long id, String name, String type, String author) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.author = author;
+    }
+
+    @Generated(hash = 614508582)
+    public BaseInfo() {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

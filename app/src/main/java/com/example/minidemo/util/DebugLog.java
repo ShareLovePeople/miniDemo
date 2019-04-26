@@ -7,7 +7,7 @@ import com.example.minidemo.BuildConfig;
 /**
  * @author bob
  * Date     19-4-25
- * Description 打印类用于调试查看信息
+ * Description 打印类 用于调试查看信息
  */
 class DebugLog {
     private static final String TAG = "DebugLog";

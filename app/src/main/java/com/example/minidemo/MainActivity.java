@@ -6,7 +6,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.minidemo.model.Info;
+import com.example.minidemo.model.BaseInfo;
 import com.example.minidemo.recycler.adapter.Infoadapter;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class MainActivity extends BaseAcivity {
 
     @BindView(R.id.recycler)
     RecyclerView recycler;
-    private List<Info> datas;
+    private List<BaseInfo> datas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,8 @@ public class MainActivity extends BaseAcivity {
         datas = new ArrayList<>(16);
         for (int i = 0; i < 10; i++) {
             i++;
-            Info info = new Info("" + i, "" + i);
-            datas.add(info);
+            BaseInfo baseInfo = new BaseInfo((long) i, "" + i);
+            datas.add(baseInfo);
         }
     }
 

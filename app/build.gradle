@@ -44,3 +44,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+greendao {
+    schemaVersion 2//数据库版本号
+//    daoPackage 'com.com.sky.downloader.greendao'//设置DaoMaster、DaoSession、Dao包名 default:com.sky.downloader.greendao
+//    targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录 default:build/generated/greendao
+    //targetGenDirTest：设置生成单元测试目录
+    //generateTests：设置自动生成单元测试用例
+}

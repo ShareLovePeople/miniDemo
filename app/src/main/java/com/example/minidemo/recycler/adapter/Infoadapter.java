@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.minidemo.R;
-import com.example.minidemo.model.Info;
+import com.example.minidemo.model.BaseInfo;
 
 import java.util.List;
 
@@ -20,10 +20,10 @@ import java.util.List;
  * Description
  */
 public class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<Info> datas;
+    private List<BaseInfo> datas;
     private Context ctx;
 
-    public Infoadapter(Context context, List<Info> datas) {
+    public Infoadapter(Context context, List<BaseInfo> datas) {
         this.ctx = context;
         this.datas = datas;
     }
@@ -37,10 +37,10 @@ public class Infoadapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        Info info = datas.get(i);
+        BaseInfo baseInfo = datas.get(i);
         if (viewHolder instanceof InfoViewHolder) {
             InfoViewHolder infoViewHolder = (InfoViewHolder) viewHolder;
-            infoViewHolder.tvTitle.setText(info.getName());
+            infoViewHolder.tvTitle.setText(baseInfo.getName());
         }
     }
 
