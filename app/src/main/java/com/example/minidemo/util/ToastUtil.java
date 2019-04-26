@@ -12,8 +12,8 @@ import com.example.minidemo.MyApplication;
 public class ToastUtil {
     private static Toast toast = null;
 
-    public static void show(CharSequence text, int toastDuration){
-        try{
+    public static void show(CharSequence text, int toastDuration) {
+        try {
             toast.getView().isShown();
             toast.setText(text);
         } catch (Exception e) {
